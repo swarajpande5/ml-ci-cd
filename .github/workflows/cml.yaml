@@ -1,5 +1,5 @@
 name: model-wine-quality
-on: [pull_request]
+on: [push, pull_request]
 jobs:
   run:
     runs-on: [ubuntu-latest]
