@@ -15,10 +15,15 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pip install --upgrade pip
-          pip install -r requirements.txt
-          python train.py
+          pip install -r requirements.txt 
+
+          python3 code/get_data.py
+          dvc repro 
 
           # Create CML report
-          cat metrics.txt >> report.md
-          echo '![](./confmat.png "Confusion Matrix")' >> report.md
+          echo '### Model Metrics' >> report.md
+          cat metrics/metrics.txt >> report.md
+
+          echo '### Confusion Matrix' >> report.md
+          echo '![](./metrics/confmat.png "Confusion Matrix")' >> report.md
           cml comment create report.md
