@@ -7,7 +7,7 @@ WORKDIR /app
 COPY . .
 
 RUN pip install --upgrade pip \
-    && pip install -r --no-cache-dir requirements.txt
+    && pip install --no-cache-dir -r requirements.txt
 
 RUN python3 code/get_data.py
 
