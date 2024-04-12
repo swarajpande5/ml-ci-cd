@@ -15,7 +15,7 @@ y = df.pop("quality")
 X_train, X_test, y_train, y_test = train_test_split(df, y, test_size=0.2, random_state=seed)
 
 # TRAINING
-clf = RandomForestClassifier(max_depth=5, random_state=seed)
+clf = RandomForestClassifier(max_depth=25, random_state=seed)
 clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 
