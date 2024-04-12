@@ -16,7 +16,7 @@ def featurization():
 
     # Create PCA object of the 20 most important components
     print("Creating PCA object...")
-    pca = PCA(n_components=20, whiten=True)
+    pca = PCA(n_components=25, whiten=True)
     pca.fit(train_data[:, 1:])
     train_labels = train_data[:, 0].reshape([train_data.shape[0], 1])
     test_labels = test_data[:, 0].reshape([test_data.shape[0], 1])
